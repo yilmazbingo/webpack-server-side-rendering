@@ -15,9 +15,13 @@ const webpackDevMiddleware = require("webpack-dev-middleware")(
 //this is automatic reloading
 const webpackHotMiddleware = require("webpack-hot-middleware")(compiler);
 
+const isProd = process.env.NODE_ENV === "production";
 //order is important
 server.use(webpackDevMiddleware);
 server.use(webpackHotMiddleware);
 server.use(staticMiddleware);
 
-server.listen(3000, () => console.log("lsitening"));
+const PORT = process.env.PORT || 8080;
+server.listen(PORT, () =>
+  console.log(`server is listening on http://localhost:${PORT}`)
+);

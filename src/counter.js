@@ -1,5 +1,6 @@
-import React from "react";
 import { hot } from "react-hot-loader/root";
+
+import React from "react";
 
 class Counter extends React.Component {
   constructor(props) {
