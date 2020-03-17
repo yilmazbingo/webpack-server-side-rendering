@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Counter from "./counter";
-import { AppContainer } from "react-hot-loader";
+import AppRoot from "./components/AppRoot";
 
 // function render(Component) {
 //   ReactDOM.render(
@@ -21,5 +20,9 @@ import { AppContainer } from "react-hot-loader";
 //     render(NewCounter);
 //   });
 // }
+function render(Component) {
+  ReactDOM.hydrate(<Component />, document.getElementById("react-root"));
+}
+render(AppRoot);
 
-ReactDOM.render(<Counter />, document.getElementById("root"));
+// ReactDOM.hydrate(<AppRoot />, document.getElementById("react-root"));
